@@ -1,0 +1,86 @@
+Decision Tree Regressor;
+1. Sort the data ascending/decending order 
+2. Select best attribute to split based mse 
+3.select the rootnode value--- mean square error and weighted average 
+4. Minimum mse at each split
+5.continue the above steps
+
+Step1.Sort the X value in ascending order 
+Annual Income   Life expectancy
+6.5		75
+7               85
+8		80
+8.5             67
+
+Step2:Take mean first two observations 
+Annual Income        Life expectancy
+6.5		       75
+7        6.75          85
+8	 7.5	       80
+8.5      8.25          67
+
+
+if x<6.75     --->75/(no of sample) ---75/1=75
+if x>6.75-------->(85+80+67)/3---------------=77.33
+
+
+if x<7.5------------->75+85/2=80
+if x>7.5------------->80+67/2=73.5
+
+if x<8.25 ------------>75+85+80/3=80
+if x>8.25------------->67/1=67
+
+Split on 6.75
+
+Annual Income   Life expectancy    Prediction  		error
+6.5		75			75        (75-75)square=0
+7               85			77.33     (85-77.33)square=(7.7)square
+8		80			77.33      (80-77.33)square=(2.7)square
+8.5             67			77.33       (67-77.33) square=(10.3) square
+				Final=172.67
+
+Split 7.5
+
+Annual Income   Life expectancy  	Prediction    error
+6.5		75                      80            (75-80)  25
+7               85                      80             (85-80)  25
+8		80                      73.5           (80-73.5) 
+8.5             67                      73.5            (67-73.5)
+                                     Final=134.5
+
+Split 8.25
+Annual Income   Life expectancy		Prediction 	Error   
+6.5		75                       80             25
+7               85                       80             25
+8		80                       80              0
+8.5             67                       67              0
+                                      Final Error =50  mean error( least)
+
+
+
+Root node split==8.25
+Mse Calculation:44.1
+
+For mse(mean square error)=(75+85+80+67)/4= 76.75
+
+=((75-76.5)square+(85-76.5)square+(80-76.75)square+(67-76.5)square)/4
+=(3.06+68.06+10.56+90.25/4=   mse==44.17
+Mse--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
